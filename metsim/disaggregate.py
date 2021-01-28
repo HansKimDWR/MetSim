@@ -190,7 +190,8 @@ def set_min_max_hour(tiny_rad_fract: np.ndarray, yday: np.ndarray, daylength: np
     # time of maximum and minimum temperature calculated thusly
     t_t_max = (params['tmax_daylength_fraction'] * (set_times - rise_times) +
                rise_times) - ts
-    t_t_min = rise_times - ts
+    t_t_min = (-params['tmin_night_fraction'] * (set_times - rise_times) +
+               rise_times) - ts
     return t_t_min, t_t_max
 
 
