@@ -158,6 +158,7 @@ class MetSim(object):
         "prec_type": 'uniform',
         "tdew_tol": 1e-6,
         "tmax_daylength_fraction": 0.67,
+        "tmin_night_fraction": 0.0,
         "rain_scalar": 0.75,
         "tday_coef": 0.45,
         "lapse_rate": 0.0065,
@@ -467,7 +468,7 @@ class MetSim(object):
         params['tdew_tol'] = float(params['tdew_tol'])
         params['tmax_daylength_fraction'] = float(params['tmax_daylength_fraction'])
         params['tday_coef'] = float(params['tday_coef'])
-        params['tmax_daylength_fraction'] = float(params['tmax_daylength_fraction'])
+        params['tmin_night_fraction'] = float(params['tmin_night_fraction'])
         params['lapse_rate'] = float(params['lapse_rate'])
         if self.params['prec_type'].upper() in ['TRIANGLE', 'MIX']:
             self.convert_monthly_param('dur')
